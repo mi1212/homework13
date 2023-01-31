@@ -16,7 +16,7 @@ class StoriesHeaderView: UIView, UICollectionViewDelegate {
         collection.delegate = self
         collection.dataSource = self
         collection.backgroundColor = .clear
-        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifire)
+        collection.register(StoriesCollectionViewCell.self, forCellWithReuseIdentifier: StoriesCollectionViewCell.identifire)
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
@@ -71,9 +71,9 @@ extension StoriesHeaderView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.identifire, for: indexPath)
-        cell.backgroundColor = .systemTeal
-        cell.layer.cornerRadius = (collectionView.frame.size.width/9.6)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoriesCollectionViewCell.identifire, for: indexPath) as! StoriesCollectionViewCell
+//        cell.backgroundColor = .systemTeal
+//        cell.layer.cornerRadius = (collectionView.frame.size.width/9.6)
         return cell
     }
 }
