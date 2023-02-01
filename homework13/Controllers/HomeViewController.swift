@@ -9,6 +9,8 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
+    private var refresherControl = UIRefreshControl()
+    
     private let storiesTableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = .black
@@ -22,6 +24,7 @@ final class HomeViewController: UIViewController {
         setupProperts()
         setupLayout()
         setupNavigationBar()
+        setupRefresh()
     }
     
     private func setupProperts() {
@@ -55,6 +58,19 @@ final class HomeViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = messsageButtonItem
     }
+    
+    private func setupRefresh() {
+        self.refresherControl.tintColor = .systemTeal
+        self.storiesTableView.alwaysBounceVertical = true
+        self.refresherControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.storiesTableView.addSubview(refresherControl)
+    }
+    
+    @objc func loadData() {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+            self.refresherControl.endRefreshing()
+        }
+    }
 
 }
  
@@ -77,21 +93,15 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifire, for: indexPath) as! PostTableViewCell
         cell.setupData(indexPath: indexPath)
+        
         return cell
         
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        view.frame.height/2
-//    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print(scrollView.frame)
-        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("scrollViewDidScroll")
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

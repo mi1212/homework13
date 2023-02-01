@@ -8,13 +8,14 @@
 import UIKit
 
 class StoriesHeaderView: UIView, UICollectionViewDelegate {
-
-    private lazy var storiesCollectionView: UICollectionView = {
+    
+    var height: CGFloat = 0
+    
+    let storiesCollectionView: UICollectionView = {
         let flow = UICollectionViewFlowLayout()
         flow.scrollDirection = .horizontal
         let collection = UICollectionView(frame: .zero, collectionViewLayout: flow)
-        collection.delegate = self
-        collection.dataSource = self
+        
         collection.backgroundColor = .clear
         collection.register(StoriesCollectionViewCell.self, forCellWithReuseIdentifier: StoriesCollectionViewCell.identifire)
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +35,8 @@ class StoriesHeaderView: UIView, UICollectionViewDelegate {
     
     private func setupProperts() {
         backgroundColor = .black
+        self.storiesCollectionView.delegate = self
+        self.storiesCollectionView.dataSource = self
     }
     
     private func setupLayout() {
@@ -72,8 +75,7 @@ extension StoriesHeaderView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoriesCollectionViewCell.identifire, for: indexPath) as! StoriesCollectionViewCell
-//        cell.backgroundColor = .systemTeal
-//        cell.layer.cornerRadius = (collectionView.frame.size.width/9.6)
+        cell.setupCorners()
         return cell
     }
 }

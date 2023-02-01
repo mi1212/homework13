@@ -11,7 +11,7 @@ class StoriesCollectionViewCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .brown
+        imageView.backgroundColor = .white
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -22,7 +22,7 @@ class StoriesCollectionViewCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .systemGray
         label.numberOfLines = 1
-        label.backgroundColor = .systemGreen
+//        label.backgroundColor = .systemGreen
         label.text = "officiallymcconaughey"
         return label
     }()
@@ -61,8 +61,15 @@ class StoriesCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupProperts() {
-        backgroundColor = .tintColor
+//        backgroundColor = .tintColor
         
+    }
+    func setupCorners() {
+//        print("heightCell - \(heightCell)")
+//        print("contentView.frame.height - \(contentView.frame.height)")
+//        print("nickNameLabel.frame.height - \(nickNameLabel.frame.height)")
+//        print("imageView.frame.height - \(imageView.frame.height)")
+        imageView.layer.cornerRadius = (contentView.frame.height - 14.3 - 8)/2
     }
     
 }
