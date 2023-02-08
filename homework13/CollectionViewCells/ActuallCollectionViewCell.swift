@@ -31,13 +31,17 @@ final class ActuallCollectionViewCell: UICollectionViewCell {
         setupLayout()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupCornerRadiusOfImage()
+    }
+    
     @available (*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     private func setupProperts() {
-//        backgroundColor = .gray
     }
     
     private func setupLayout() {
@@ -59,7 +63,8 @@ final class ActuallCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCornerRadiusOfImage() {
-        picImageView.layer.cornerRadius = picImageView.frame.height/2
-        print(picImageView.frame.height/2)
+        if picImageView.layer.cornerRadius == 0.0 {
+            picImageView.layer.cornerRadius = picImageView.frame.height/2
+        }
     }
 }
