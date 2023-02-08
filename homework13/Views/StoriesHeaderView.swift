@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StoriesHeaderView: UIView, UICollectionViewDelegate {
+class StoriesHeaderView: UIView {
     
     var height: CGFloat = 0
     

@@ -31,7 +31,6 @@ final class ActuallsCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupProperts() {
-//        backgroundColor = .brown
         actuallsCollectionView.delegate = self
         actuallsCollectionView.dataSource = self
     }
@@ -72,8 +71,6 @@ extension ActuallsCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActuallCollectionViewCell.identifire, for: indexPath) as! ActuallCollectionViewCell
-        print(cell.frame)
-//        cell.backgroundColor = .black
         return cell
     }
 }
