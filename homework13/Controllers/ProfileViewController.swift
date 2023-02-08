@@ -29,6 +29,16 @@ final class ProfileViewController: UIViewController {
         setupNavigationBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        profileCollectionView.layoutIfNeeded()
+    }
+    
     private func setupProperts() {
         view.backgroundColor = .black
         profileCollectionView.delegate = self

@@ -25,6 +25,7 @@
 		FD9B3577298826B300B7DAFC /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9B3576298826B300B7DAFC /* UIView+Extention.swift */; };
 		FD9B35792988338100B7DAFC /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9B35782988338100B7DAFC /* PostTableViewCell.swift */; };
 		FD9B357B2988427A00B7DAFC /* StoriesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9B357A2988427A00B7DAFC /* StoriesHeaderView.swift */; };
+		FDF3F492299383D10031163C /* ActuallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3F491299383D10031163C /* ActuallCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		FD9B3576298826B300B7DAFC /* UIView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
 		FD9B35782988338100B7DAFC /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		FD9B357A2988427A00B7DAFC /* StoriesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesHeaderView.swift; sourceTree = "<group>"; };
+		FDF3F491299383D10031163C /* ActuallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActuallCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				FD2AF5AA2990EA09003AB67F /* ProfileHeaderViewCell.swift */,
 				FD2AF5B029911059003AB67F /* ActuallsCollectionViewCell.swift */,
 				FD2AF5B2299111C3003AB67F /* PropertsCollectionViewCell.swift */,
+				FDF3F491299383D10031163C /* ActuallCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				FD9B35612988215A00B7DAFC /* SceneDelegate.swift in Sources */,
 				FD9B35792988338100B7DAFC /* PostTableViewCell.swift in Sources */,
 				FD2AF5AF2990F782003AB67F /* PhotoCollectionViewCell.swift in Sources */,
+				FDF3F492299383D10031163C /* ActuallCollectionViewCell.swift in Sources */,
 				FD9B3577298826B300B7DAFC /* UIView+Extention.swift in Sources */,
 				FD9B357B2988427A00B7DAFC /* StoriesHeaderView.swift in Sources */,
 			);
